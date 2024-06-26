@@ -1,0 +1,40 @@
+{
+  "name": "expense-tracker-graphql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node backend/index.js",
+    "dev": "cross-env NODE_ENV=development nodemon backend/index.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+    "electron": "electron .",
+    "electron-dev": "concurrently \"npm run dev\" \"wait-on http://localhost:4000 && electron .\"",
+    "package": "electron-packager . ExpenseTracker --platform=win32 --arch=x64 --out=dist --overwrite"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "Saqlain",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.10.4",
+    "@graphql-tools/merge": "^9.0.4",
+    "bcryptjs": "^2.4.3",
+    "connect-mongodb-session": "^5.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "graphql": "^16.8.1",
+    "graphql-passport": "^0.6.8",
+    "mongoose": "^8.3.3",
+    "passport": "^0.7.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "cross-env": "^7.0.3",
+    "electron": "^31.1.0",
+    "electron-is-dev": "^2.0.0",
+    "electron-packager": "^17.1.2",
+    "nodemon": "^3.1.0",
+    "wait-on": "^7.0.1"
+  }
+}
