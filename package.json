@@ -9,7 +9,7 @@
     "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
     "electron": "electron .",
     "electron-dev": "concurrently \"npm run dev\" \"wait-on http://localhost:4000 && electron .\"",
-    "package": "electron-packager . ExpenseTracker --platform=win32 --arch=x64 --out=dist --overwrite"
+    "package": "electron-packager . ExpenseTracker --platform=win32 --arch=x64 --out=dist --overwrite --verbose"
   },
   "type": "module",
   "keywords": [],
